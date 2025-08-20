@@ -1,0 +1,14 @@
+<div class="c-grid c-flex-column c-ai-center" style="height: 85vh; max-height: 70vh">
+  <div [class]="cssContainerClass + ' ' + cssContainerHeightClass">
+    <ng2-pdfjs-viewer
+      #pdfViewerAutoLoad
+      [downloadFileName]="name"
+      [download]="isDownloadable"
+      [openFile]="false"
+      [print]="isPrintable"
+      [showSpinner]="true"
+      [zoom]="'page-fit'"
+    >
+    </ng2-pdfjs-viewer>
+  </div>
+</div>

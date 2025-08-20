@@ -1,0 +1,10 @@
+<div class="cez-form-field cez-label">
+  <cez-label [class.c-d-none]="!czyWyrownanie" [style.visibility]="'hidden'" [label]="'helper'" />
+  <div class="c-d-flex c-d-block c-gap-3">
+    @for (value of config.values; track value.id) {
+      <button cezBtn styleType="secondary-blue" class="" (click)="handleButtonClick(value)">
+        {{ value.id }}
+      </button>
+    }
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="c-gird" *transloco="let t; read: TRANSLOCO_KEY">
+  <div *ngIf="!!wynikWeryfikacji.length; else brak">
+    <div *ngFor="let wynik of wynikWeryfikacji">
+      <div class="col-lg-12" *ngIf="wynik?.bledyWeryfikacjiRecepty?.length">
+        <p class="cez-p">{{ t('bledy') }}</p>
+        <p class="cez-p">{{ wynik.identyfikator }}:</p>
+        <div>
+          <ul>
+            <li *ngFor="let blad of wynik.bledyWeryfikacjiRecepty">{{ blad.opis }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let wynik of wynikWeryfikacji">
+      <div class="col-lg-12" *ngIf="wynik?.ostrzezeniaWeryfikacjiRecepty?.length">
+        <p class="cez-p">{{ t('ostrzezenia') }}</p>
+        <p class="cez-p">{{ wynik.identyfikator }}:</p>
+        <div>
+          <ul>
+            <li *ngFor="let ostrzerzenie of wynik.ostrzezeniaWeryfikacjiRecepty">{{ ostrzerzenie.opis }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Content to display if condition is true -->
+  </div>
+  <ng-template #brak>
+    <div class="c-col-12"
+      ><p class="cez-p">{{ t('brak') }}</p>
+    </div>
+  </ng-template>
+</div>

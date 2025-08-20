@@ -1,0 +1,25 @@
+<form *transloco="let t; read: TRANSLOCO_KEY">
+  <form class="c-grid c-m-3" [formGroup]="form" (submit)="potwierdz()">
+    <div class="c-col-12"
+      ><p
+        class="cez-p"
+        [innerHtml]="t('anuluj.dialog.form.labels.powod', { id: numerRecepty, data: dataWystawieniaRecepty | date : DateFormatEnum.DATE_TIME_DISPLAY })"
+      ></p>
+    </div>
+    <div class="c-col-12">
+      <cez-textarea
+        [rows]="4"
+        class="c-w-100"
+        [hiddenLabel]="formControlNames.powod"
+        [formControlName]="formControlNames.powod"
+        [required]="true"
+      ></cez-textarea>
+      <div class [cezFieldErrors]="formControlNames.powod">
+        <div cezFieldError="required" when="touched">{{ t('walidacja.wymagane') }}</div>
+      </div>
+    </div>
+    <div class="c-grid c-w-100 c-mt-3 c-jc-end">
+      <button cezBtn styleType="primary-blue" type="submit" [disabled]="form.invalid">{{ t('anuluj.dialog.buttons.potwierdz') }}</button>
+    </div>
+  </form>
+</form>

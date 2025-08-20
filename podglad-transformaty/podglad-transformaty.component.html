@@ -1,0 +1,17 @@
+<div class="c-gird" *transloco="let t; read: TRANSLOCO_KEY">
+  <rp-pdf-viewer
+    class="c-pt-3"
+    [base64]="transformata!"
+    [fileName]="TypDokumentuPdfEnum.DOKUMENT_RECEPTY"
+    [isPrintable]="true"
+    [isDownloadable]="true"
+    [cssContainerClass]="cssContainerClass"
+  />
+  <div class="c-d-flex c-jc-end c-col-12">
+    @for (button of buttons; track $index) {
+      <span [cezTooltip]="button?.tooltip!" [tooltipShowTimeout]="0" tooltipPosition="bottom" [tooltipIsVisible]="!!button?.tooltipIsVisible">
+        <button cezBtn styleType="primary-blue" class="c-mr-3" (click)="onButtonEvent(button)" [disabled]="button.disabled">{{ t(button.text) }}</button>
+      </span>
+    }
+  </div>
+</div>

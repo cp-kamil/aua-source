@@ -1,0 +1,8 @@
+<ng-container *transloco="let t; read: translocoKey">
+  <div class="c-col-12">
+    <p class="cez-p c-mb-3 cez-p--bold" *ngIf="header">{{ t(header) }}</p>
+  </div>
+  <cez-tabs-group [noPadding]="true" [selectedIndex]="selectedIndex" (selectedIndexChange)="onRodzajLekuChange($event)">
+    <cez-tabs-tab *ngFor="let option of options; let i = index" [label]="t(option.id)" [aria-label]="option.value"></cez-tabs-tab>
+  </cez-tabs-group>
+</ng-container>

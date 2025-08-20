@@ -1,0 +1,12 @@
+<ng-container *transloco="let t; read: TRANSLOCO_KEY">
+  <div class="c-d-fled">
+    <div class="c-col c-col-12">
+      <p class="cez-p">{{ content }}</p>
+    </div>
+    <div class="c-d-flex c-jc-end c-col c-col-12">
+      <button cezBtn class="c-mt-2 c-mr-3" [styleType]="'secondary-blue'" (click)="potwierdz()">
+        {{ t('buttons.tak') }}
+      </button>
+    </div>
+  </div>
+</ng-container>
